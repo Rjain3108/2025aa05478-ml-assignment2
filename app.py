@@ -7,7 +7,7 @@ st.text("Select the model using that you want to predict some result")
 model = st.selectbox("Select a model:", ['Logistics Regression', 'Decision Tree', 'kNN', 'Naive Bayes', 'Random Forest', 'XGBoost'])
 dataType = st.selectbox("Select a dataType:", ['file','Manually data enter'])
 
-model2 = st.selectbox("Select a model:", ['Logistics Regression', 'Decision Tree', 'kNN', 'Naive Bayes', 'Random Forest', 'XGBoost'])
+model2 = st.selectbox("Select a model2:", ['Logistics Regression', 'Decision Tree', 'kNN', 'Naive Bayes', 'Random Forest', 'XGBoost'])
 
 
 # A button that displays text when clicked
