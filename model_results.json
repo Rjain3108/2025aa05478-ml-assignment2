@@ -1,0 +1,137 @@
+{
+    "Logistic Regression": {
+        "confusion_matrix": [
+            [
+                40,
+                0,
+                14,
+                14
+            ],
+            [
+                0,
+                66,
+                14,
+                0
+            ],
+            [
+                15,
+                7,
+                48,
+                2
+            ],
+            [
+                16,
+                0,
+                0,
+                64
+            ]
+        ],
+        "evaluation_metrics": {
+            "accuracy": 0.7266666666666667,
+            "precision": 0.7337077016291452,
+            "recall": 0.7266666666666667,
+            "f1_score": 0.72953000397774,
+            "matthews_corrcoef": 0.6356881854905044
+        },
+        "multilabel_confusion_matrix": [
+            {
+                "Class": "low",
+                "TP": 40,
+                "FP": 31,
+                "FN": 28,
+                "TN": 201
+            },
+            {
+                "Class": "medium",
+                "TP": 66,
+                "FP": 7,
+                "FN": 14,
+                "TN": 213
+            },
+            {
+                "Class": "high",
+                "TP": 48,
+                "FP": 28,
+                "FN": 24,
+                "TN": 200
+            },
+            {
+                "Class": "very high",
+                "TP": 64,
+                "FP": 16,
+                "FN": 16,
+                "TN": 204
+            }
+        ]
+    },
+    "Decision Tree": {
+        "confusion_matrix": [
+            [
+                40,
+                0,
+                14,
+                14
+            ],
+            [
+                0,
+                66,
+                14,
+                0
+            ],
+            [
+                15,
+                7,
+                48,
+                2
+            ],
+            [
+                16,
+                0,
+                0,
+                64
+            ]
+        ],
+        "evaluation_metrics": {
+            "accuracy": 0.7266666666666667,
+            "precision": 0.7337077016291452,
+            "recall": 0.7266666666666667,
+            "f1_score": 0.72953000397774,
+            "matthews_corrcoef": 0.6356881854905044
+        }
+    },
+    "kNN": {
+        "confusion_matrix": [
+            [
+                40,
+                0,
+                14,
+                14
+            ],
+            [
+                0,
+                66,
+                14,
+                0
+            ],
+            [
+                15,
+                7,
+                48,
+                2
+            ],
+            [
+                16,
+                0,
+                0,
+                64
+            ]
+        ],
+        "evaluation_metrics": {
+            "accuracy": 0.7266666666666667,
+            "precision": 0.7337077016291452,
+            "recall": 0.7266666666666667,
+            "f1_score": 0.72953000397774,
+            "matthews_corrcoef": 0.6356881854905044
+        }
+    }
+}
