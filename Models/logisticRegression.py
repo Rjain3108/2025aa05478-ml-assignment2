@@ -21,7 +21,7 @@ def model_train(X_train, y_train):
     # Create model
     model = LogisticRegression(
         C=0.1,
-        max_iter=5000
+        max_iter=2000
     )
     # Fit model
     model.fit(X_train, y_train)
@@ -34,7 +34,7 @@ def predict(model, X_test):
 
 def main():
     X_train, y_train = get_mobile_train_data()
-    X_train, y_train = data_preprocessing(X_train, y_train)
+    #X_train, y_train = data_preprocessing(X_train, y_train)
     #train model and predict
     model = model_train(X_train, y_train)
     joblib.dump(model, model_path)

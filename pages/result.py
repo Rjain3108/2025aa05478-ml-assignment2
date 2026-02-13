@@ -18,8 +18,6 @@ try:
         model_results_data = json.load(f)
 except FileNotFoundError:
             st.write(f"matrix data not found.")
-
-
 table_data = {}
 for model_name, model_data in model_results_data.items():
     table_data[model_name] = model_data["evaluation_metrics"]
@@ -29,11 +27,13 @@ st.subheader("Evaluation Metrics Table")
 st.dataframe(df_metrics, use_container_width=True)
 
 for m in model:
+    st.divider()
     st.markdown(f"<h3 style='text-align:center;'>{m}</h3>", unsafe_allow_html=True)
+    st.divider()
     col1, col2 = st.columns(2)
     with col1:
         try: 
-            fig = plot_confusion_matrix(m, np.array(model_results_data[m]["confusion_matrix"]))
+            fig = plot_confusion_matrix(m, np.array(model_results_data[m]["confusion_matrix"]), title=f"Confusion Matrix")
             st.pyplot(fig)
             #st.dataframe(model_results_data[m]["multilabel_confusion_matrix"], use_container_width=True)
         except KeyError:
@@ -41,7 +41,7 @@ for m in model:
     with col2:
         try: 
             metrics = model_results_data[m]["evaluation_metrics"]
-            fig = plot_evaluation_metrics(m, metrics)
+            fig = plot_evaluation_metrics(m, metrics, title=f"Evaluation Metrics")
             st.pyplot(fig)
         except KeyError:
             st.write(f"Evaluation metrics data for {m} not found.")

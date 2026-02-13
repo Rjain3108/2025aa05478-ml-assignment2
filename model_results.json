@@ -2,65 +2,65 @@
     "Logistic Regression": {
         "confusion_matrix": [
             [
-                313,
+                41,
                 0,
-                80,
-                107
+                13,
+                14
             ],
             [
                 0,
-                433,
                 67,
+                13,
                 0
             ],
             [
-                92,
-                47,
-                355,
-                6
+                10,
+                9,
+                50,
+                3
             ],
             [
-                86,
+                15,
                 0,
                 0,
-                414
+                65
             ]
         ],
         "evaluation_metrics": {
-            "accuracy": 0.7575,
-            "precision": 0.758076984363495,
-            "recall": 0.7575,
-            "f1_score": 0.7575433032895458,
-            "matthews_corrcoef": 0.6768036204557658
+            "accuracy": 0.7433333333333333,
+            "precision": 0.74517265076957,
+            "recall": 0.7433333333333333,
+            "f1_score": 0.7439202284310079,
+            "matthews_corrcoef": 0.6574651336085651
         },
         "multilabel_confusion_matrix": [
             {
                 "Class": "low",
-                "TP": 313,
-                "FP": 178,
-                "FN": 187,
-                "TN": 1322
+                "TP": 41,
+                "FP": 25,
+                "FN": 27,
+                "TN": 207
             },
             {
                 "Class": "medium",
-                "TP": 433,
-                "FP": 47,
-                "FN": 67,
-                "TN": 1453
+                "TP": 67,
+                "FP": 9,
+                "FN": 13,
+                "TN": 211
             },
             {
                 "Class": "high",
-                "TP": 355,
-                "FP": 147,
-                "FN": 145,
-                "TN": 1353
+                "TP": 50,
+                "FP": 26,
+                "FN": 22,
+                "TN": 202
             },
             {
                 "Class": "very high",
-                "TP": 414,
-                "FP": 113,
-                "FN": 86,
-                "TN": 1387
+                "TP": 65,
+                "FP": 17,
+                "FN": 15,
+                "TN": 203
             }
         ]
     },

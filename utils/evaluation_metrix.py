@@ -16,20 +16,20 @@ import os
 import json
 
 labels = ["low", "medium", "high", "very high"]
-def evaluate_confusionMatrix(model, y_test, y_pred):
+def evaluate_confusionMatrix(model, y_test, y_pred, title="Confusion Matrix"):
     cm = confusion_matrix(y_test, y_pred)
     save_model_results(model, "confusion_matrix", cm.tolist(), file_path="model_results.json")
-    return plot_confusion_matrix(model, cm),cm
+    return plot_confusion_matrix(model, cm, title),cm
 
-def plot_confusion_matrix(model_name, cm):
+def plot_confusion_matrix(model_name, cm, title):
     fig, ax = plt.subplots()
     print(cm)
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
     disp.plot(ax=ax)
-    ax.set_title(f"Confusion Matrix for {model_name}")
+    ax.set_title(f"{title}")
     return fig
 
-def evaluation_marix(model_name,y_test, y_pred):
+def evaluation_marix(model_name,y_test, y_pred, title="Evaluation Metrics"):
     accuracy = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred, average='weighted')
     recall = recall_score(y_test, y_pred, average='weighted')
@@ -44,12 +44,12 @@ def evaluation_marix(model_name,y_test, y_pred):
         "matthews_corrcoef": mcc
     }
     save_model_results(model_name, "evaluation_metrics", metrics, file_path="model_results.json")
-    return metrics, plot_evaluation_metrics(model_name, metrics)
+    return metrics, plot_evaluation_metrics(model_name, metrics, title=title)
 
-def plot_evaluation_metrics(model_name, metrics):
+def plot_evaluation_metrics(model_name, metrics, title="Evaluation Metrics"):
     fig, ax = plt.subplots()
     ax.bar(metrics.keys(), metrics.values())
-    ax.set_title(f"Model Evaluation Metrics for {model_name}")
+    ax.set_title(f"{title}")
     ax.set_ylabel("Score")
     ax.set_xticklabels(metrics.keys(), rotation=45)
     return fig

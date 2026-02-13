@@ -46,29 +46,30 @@ if st.button("Calculate"):
     if X_test is not None and y_test is not None:
         y_pred = pred.predict(model, X_test)   # Get predictions from the model
         y_pred = pd.Series(y_pred).map(mapping) # Map predictions to categorical labels
-        metrics, evaluation_marix_fig = em.evaluation_marix(model,y_test, y_pred)
+        metrics, evaluation_marix_fig = em.evaluation_marix(model,y_test, y_pred, title=f"")
         # ---- Layout (2 columns) ----
         col1, col2 = st.columns(2)
         with col1:
-            st.subheader(f"Confusion Matrix")
-            cm_fig,cm = em.evaluate_confusionMatrix(model,y_test, y_pred) # Get confusion matrix figure and data
+            st.markdown(f"<h4 style='text-align:center;'>Confusion Matrix</h4>", unsafe_allow_html=True)
+            cm_fig,cm = em.evaluate_confusionMatrix(model,y_test, y_pred, title=f"") # Get confusion matrix figure and data
             st.pyplot(cm_fig)
         with col2:
-            st.subheader(f"Performance Metrics")
+            st.markdown(f"<h4 style='text-align:center;'>Performance Metrics</h4>", unsafe_allow_html=True)
             st.pyplot(evaluation_marix_fig)
         st.divider()
         col1, col2 = st.columns(2)
         mcm = em.evaluate_multilabeConfusionMatrix(model, y_test, y_pred)
         with col1:
-            st.subheader("Multilabel Confusion Matrix")
+            st.markdown(f"<h4 style='text-align:center;'>Multilabel Confusion Matrix</h4>", unsafe_allow_html=True)
             st.dataframe(mcm, use_container_width=True)
         with col2:
-            st.subheader("Performance Table")
+            st.markdown(f"<h4 style='text-align:center;'>Performance Table</h4>", unsafe_allow_html=True)
             st.dataframe(metrics, use_container_width=True)
         results = X_test.copy()     
-        results["Actual"] = pd.Series(y_test).reset_index(drop=True)
-        results["Predicted"] = pd.Series(y_pred).reset_index(drop=True)
+        results["Actual Price Range"] = pd.Series(y_test).reset_index(drop=True)
+        results["Predicted Price Range"] = pd.Series(y_pred).reset_index(drop=True)
         st.divider()
+        st.markdown(f"<h4 style='text-align:center;'> Prediction Table</h4>", unsafe_allow_html=True)
         st.write(results)
 
     else:
