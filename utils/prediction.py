@@ -4,12 +4,12 @@ from utils.data_import import read_csv,get_feature_target_data
 
 
 model_functions = {
-    "Logistic Regression": joblib.load("pkl/logisticModel.pkl")
-    #"Decision Tree": joblib.load("pkl/decisionTreeModel.pkl"),
-    #"kNN": joblib.load("pkl/kNNModel.pkl"), 
-    #"Naive Bayes": joblib.load("pkl/naiveBayesModel.pkl"), 
-    #"Random Forest": joblib.load("pkl/randomForestModel.pkl"), 
-    #"XGBoost": joblib.load("pkl/xgboostModel.pkl")
+    "Logistic Regression": joblib.load("pkl/logisticModel.pkl"),
+    "Decision Tree": joblib.load("pkl/decisionTreeModel.pkl"),
+    "kNN": joblib.load("pkl/kNNModel.pkl"), 
+    "Naive Bayes": joblib.load("pkl/naiveBayesModel.pkl"), 
+    "Random Forest": joblib.load("pkl/randomForestModel.pkl"), 
+    "XGBoost": joblib.load("pkl/xgboostModel.pkl")
 }
 data= read_csv("test.csv")
 X_test, y_test = get_feature_target_data(data)

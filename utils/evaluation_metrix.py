@@ -84,5 +84,4 @@ def save_model_results(model_name, metricsName, metrics, file_path="model_result
     # Step 3: Save back to file
     with open(file_path, "w") as f:
         json.dump(data, f, indent=4)
-
-    print(f"{model_name} results saved successfully.")
+    print(f"{model_name} {metricsName} results saved successfully.")

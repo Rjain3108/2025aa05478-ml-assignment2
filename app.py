@@ -3,6 +3,12 @@ import pandas as pd
 import utils.data_import as data_import
 import utils.prediction as pred
 import utils.evaluation_metrix as em
+import pages.result as rp
+
+st.set_page_config(
+    page_title="Mobile price Prediction App",
+    layout="wide"
+)
 
 test_file_path = "test.csv"
 X_test,y_test = None, None
@@ -34,13 +40,13 @@ else:
     st.write("Please upload a CSV file to proceed.")
 #test_data = data_import.get_mobile_test_data()
 # Create a dropdown menu for selecting a hobby
-model = st.selectbox("Select a model:", ['ALL','Logistic Regression', 'Decision Tree', 'kNN', 'Naive Bayes', 'Random Forest', 'XGBoost'])
+model = st.selectbox("Select a model:", ['Logistic Regression', 'Decision Tree', 'kNN', 'Naive Bayes', 'Random Forest', 'XGBoost'])
 # A button that displays text when clicked
 if st.button("Calculate"):
     if X_test is not None and y_test is not None:
         y_pred = pred.predict(model, X_test)   # Get predictions from the model
         y_pred = pd.Series(y_pred).map(mapping) # Map predictions to categorical labels
-        
+        metrics, evaluation_marix_fig = em.evaluation_marix(model,y_test, y_pred)
         # ---- Layout (2 columns) ----
         col1, col2 = st.columns(2)
         with col1:
@@ -49,12 +55,16 @@ if st.button("Calculate"):
             st.pyplot(cm_fig)
         with col2:
             st.subheader(f"Performance Metrics")
-            metrics, evaluation_marix_fig = em.evaluation_marix(model,y_test, y_pred)
             st.pyplot(evaluation_marix_fig)
         st.divider()
+        col1, col2 = st.columns(2)
         mcm = em.evaluate_multilabeConfusionMatrix(model, y_test, y_pred)
-        st.subheader("Multilabel Confusion Matrix")
-        st.dataframe(mcm, use_container_width=True)
+        with col1:
+            st.subheader("Multilabel Confusion Matrix")
+            st.dataframe(mcm, use_container_width=True)
+        with col2:
+            st.subheader("Performance Table")
+            st.dataframe(metrics, use_container_width=True)
         results = X_test.copy()     
         results["Actual"] = pd.Series(y_test).reset_index(drop=True)
         results["Predicted"] = pd.Series(y_pred).reset_index(drop=True)

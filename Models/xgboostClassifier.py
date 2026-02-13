@@ -1,14 +1,14 @@
 import sys
 import os
 sys.path.append("..//")
-from sklearn.linear_model import LogisticRegression
+from xgboost import XGBClassifier
 import joblib
 from utils.data_import import get_mobile_train_data
 from sklearn.model_selection import train_test_split
 
 model_dir = "../pkl"
 os.makedirs(model_dir, exist_ok=True)
-model_path = os.path.join(model_dir, "logisticModel.pkl")
+model_path = os.path.join(model_dir, "xgboostModel.pkl")
 
 def data_preprocessing(feature_data, target_data):
     # Split features and target
@@ -19,10 +19,14 @@ def data_preprocessing(feature_data, target_data):
 
 def model_train(X_train, y_train):
     # Create model
-    model = LogisticRegression(
-        C=0.1,
-        max_iter=5000
-    )
+    model = XGBClassifier(
+    n_estimators=300,
+    max_depth=5,
+    learning_rate=0.1,
+    objective="multi:softmax",
+    random_state=42
+)
+
     # Fit model
     model.fit(X_train, y_train)
     print("Model trained successfully.")
