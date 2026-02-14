@@ -17,11 +17,12 @@ X_test, y_test = get_feature_target_data(data)
 def predict(modelName, X_test):
     model = model_functions[modelName]
     y_pred = model.predict(X_test)
-    return y_pred
+    y_prob = model.predict_proba(X_test)
+    return y_pred, y_prob
 
 def main():
     modelName = "Logistic Regression"
-    predict(modelName, X_test)
+    y_pred, y_prob = predict(modelName, X_test)
     
 if __name__ == "__main__":
     main()

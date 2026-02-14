@@ -44,9 +44,9 @@ model = st.selectbox("Select a model:", ['Logistic Regression', 'Decision Tree',
 # A button that displays text when clicked
 if st.button("Calculate"):
     if X_test is not None and y_test is not None:
-        y_pred = pred.predict(model, X_test)   # Get predictions from the model
+        y_pred, y_prob = pred.predict(model, X_test)   # Get predictions from the model
         y_pred = pd.Series(y_pred).map(mapping) # Map predictions to categorical labels
-        metrics, evaluation_marix_fig = em.evaluation_marix(model,y_test, y_pred, title=f"")
+        metrics, evaluation_marix_fig = em.evaluation_marix(model,y_test, y_pred, y_prob, title=f"")
         # ---- Layout (2 columns) ----
         col1, col2 = st.columns(2)
         with col1:

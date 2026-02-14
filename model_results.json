@@ -1,5 +1,13 @@
 {
     "Logistic Regression": {
+        "evaluation_metrics": {
+            "accuracy": 0.7433333333333333,
+            "precision": 0.74517265076957,
+            "recall": 0.7433333333333333,
+            "f1_score": 0.7439202284310079,
+            "matthews_corrcoef": 0.6574651336085651,
+            "auc": 0.5793981826332433
+        },
         "confusion_matrix": [
             [
                 41,
@@ -26,13 +34,6 @@
                 65
             ]
         ],
-        "evaluation_metrics": {
-            "accuracy": 0.7433333333333333,
-            "precision": 0.74517265076957,
-            "recall": 0.7433333333333333,
-            "f1_score": 0.7439202284310079,
-            "matthews_corrcoef": 0.6574651336085651
-        },
         "multilabel_confusion_matrix": [
             {
                 "Class": "low",
@@ -64,328 +65,333 @@
             }
         ]
     },
-    "Decision Tree": {
-        "confusion_matrix": [
-            [
-                406,
-                0,
-                65,
-                29
-            ],
-            [
-                0,
-                453,
-                47,
-                0
-            ],
-            [
-                36,
-                19,
-                445,
-                0
-            ],
-            [
-                67,
-                0,
-                0,
-                433
-            ]
-        ],
-        "evaluation_metrics": {
-            "accuracy": 0.8685,
-            "precision": 0.8733851092021867,
-            "recall": 0.8685,
-            "f1_score": 0.8697673818536934,
-            "matthews_corrcoef": 0.8254316459919195
-        },
-        "multilabel_confusion_matrix": [
-            {
-                "Class": "low",
-                "TP": 406,
-                "FP": 103,
-                "FN": 94,
-                "TN": 1397
-            },
-            {
-                "Class": "medium",
-                "TP": 453,
-                "FP": 19,
-                "FN": 47,
-                "TN": 1481
-            },
-            {
-                "Class": "high",
-                "TP": 445,
-                "FP": 112,
-                "FN": 55,
-                "TN": 1388
-            },
-            {
-                "Class": "very high",
-                "TP": 433,
-                "FP": 29,
-                "FN": 67,
-                "TN": 1471
-            }
-        ]
-    },
-    "kNN": {
-        "confusion_matrix": [
-            [
-                460,
-                0,
-                25,
-                15
-            ],
-            [
-                0,
-                484,
-                16,
-                0
-            ],
-            [
-                12,
-                11,
-                477,
-                0
-            ],
-            [
-                20,
-                0,
-                0,
-                480
-            ]
-        ],
-        "evaluation_metrics": {
-            "accuracy": 0.9505,
-            "precision": 0.9508208794794162,
-            "recall": 0.9505,
-            "f1_score": 0.9505598569245237,
-            "matthews_corrcoef": 0.9340681894668375
-        },
-        "multilabel_confusion_matrix": [
-            {
-                "Class": "low",
-                "TP": 460,
-                "FP": 32,
-                "FN": 40,
-                "TN": 1468
-            },
-            {
-                "Class": "medium",
-                "TP": 484,
-                "FP": 11,
-                "FN": 16,
-                "TN": 1489
-            },
-            {
-                "Class": "high",
-                "TP": 477,
-                "FP": 41,
-                "FN": 23,
-                "TN": 1459
-            },
-            {
-                "Class": "very high",
-                "TP": 480,
-                "FP": 15,
-                "FN": 20,
-                "TN": 1485
-            }
-        ]
-    },
     "Naive Bayes": {
+        "evaluation_metrics": {
+            "accuracy": 0.8233333333333334,
+            "precision": 0.8328364871923161,
+            "recall": 0.8233333333333334,
+            "f1_score": 0.8248831704640311,
+            "matthews_corrcoef": 0.7665638249274778,
+            "auc": 0.5840553836018633
+        },
         "confusion_matrix": [
             [
-                371,
+                55,
                 0,
-                81,
-                48
+                5,
+                8
             ],
             [
                 0,
-                457,
-                43,
+                75,
+                5,
                 0
             ],
             [
-                91,
-                40,
-                369,
+                13,
+                7,
+                52,
                 0
             ],
             [
-                58,
+                15,
                 0,
-                1,
-                441
+                0,
+                65
             ]
         ],
-        "evaluation_metrics": {
-            "accuracy": 0.819,
-            "precision": 0.8204456736569538,
-            "recall": 0.819,
-            "f1_score": 0.819616467128406,
-            "matthews_corrcoef": 0.7587382443506238
-        },
         "multilabel_confusion_matrix": [
             {
                 "Class": "low",
-                "TP": 371,
-                "FP": 149,
-                "FN": 129,
-                "TN": 1351
+                "TP": 55,
+                "FP": 28,
+                "FN": 13,
+                "TN": 204
             },
             {
                 "Class": "medium",
-                "TP": 457,
-                "FP": 40,
-                "FN": 43,
-                "TN": 1460
+                "TP": 75,
+                "FP": 7,
+                "FN": 5,
+                "TN": 213
             },
             {
                 "Class": "high",
-                "TP": 369,
-                "FP": 125,
-                "FN": 131,
-                "TN": 1375
+                "TP": 52,
+                "FP": 10,
+                "FN": 20,
+                "TN": 218
             },
             {
                 "Class": "very high",
-                "TP": 441,
-                "FP": 48,
-                "FN": 59,
-                "TN": 1452
+                "TP": 65,
+                "FP": 8,
+                "FN": 15,
+                "TN": 212
             }
         ]
     },
     "Random Forest": {
+        "evaluation_metrics": {
+            "accuracy": 0.88,
+            "precision": 0.8804540386838096,
+            "recall": 0.88,
+            "f1_score": 0.8799655331635313,
+            "matthews_corrcoef": 0.8399151196121293,
+            "auc": 0.5791151785662936
+        },
         "confusion_matrix": [
             [
-                488,
+                57,
                 0,
-                5,
+                4,
                 7
             ],
             [
                 0,
-                495,
+                75,
                 5,
                 0
             ],
             [
-                8,
+                7,
                 6,
-                486,
+                59,
                 0
             ],
             [
-                8,
+                7,
                 0,
                 0,
-                492
+                73
             ]
         ],
-        "evaluation_metrics": {
-            "accuracy": 0.9805,
-            "precision": 0.9805221434787429,
-            "recall": 0.9805,
-            "f1_score": 0.9805027855596665,
-            "matthews_corrcoef": 0.9740055193802482
-        },
         "multilabel_confusion_matrix": [
             {
                 "Class": "low",
-                "TP": 488,
-                "FP": 16,
-                "FN": 12,
-                "TN": 1484
+                "TP": 57,
+                "FP": 14,
+                "FN": 11,
+                "TN": 218
             },
             {
                 "Class": "medium",
-                "TP": 495,
+                "TP": 75,
                 "FP": 6,
                 "FN": 5,
-                "TN": 1494
+                "TN": 214
             },
             {
                 "Class": "high",
-                "TP": 486,
-                "FP": 10,
-                "FN": 14,
-                "TN": 1490
+                "TP": 59,
+                "FP": 9,
+                "FN": 13,
+                "TN": 219
             },
             {
                 "Class": "very high",
-                "TP": 492,
+                "TP": 73,
                 "FP": 7,
-                "FN": 8,
-                "TN": 1493
+                "FN": 7,
+                "TN": 213
             }
         ]
     },
     "XGBoost": {
+        "evaluation_metrics": {
+            "accuracy": 0.9,
+            "precision": 0.9010653129224827,
+            "recall": 0.9,
+            "f1_score": 0.9001831713770085,
+            "matthews_corrcoef": 0.8667398688905822,
+            "auc": 0.6019876110217868
+        },
         "confusion_matrix": [
             [
-                489,
+                57,
                 0,
                 6,
                 5
             ],
             [
                 0,
-                495,
+                75,
                 5,
                 0
             ],
             [
                 2,
                 4,
-                494,
+                66,
                 0
             ],
             [
                 8,
                 0,
                 0,
-                492
+                72
             ]
         ],
-        "evaluation_metrics": {
-            "accuracy": 0.985,
-            "precision": 0.9850253368461729,
-            "recall": 0.985,
-            "f1_score": 0.9850038574330854,
-            "matthews_corrcoef": 0.9800058800529206
-        },
         "multilabel_confusion_matrix": [
             {
                 "Class": "low",
-                "TP": 489,
+                "TP": 57,
                 "FP": 10,
                 "FN": 11,
-                "TN": 1490
+                "TN": 222
             },
             {
                 "Class": "medium",
-                "TP": 495,
+                "TP": 75,
                 "FP": 4,
                 "FN": 5,
-                "TN": 1496
+                "TN": 216
             },
             {
                 "Class": "high",
-                "TP": 494,
+                "TP": 66,
                 "FP": 11,
                 "FN": 6,
-                "TN": 1489
+                "TN": 217
             },
             {
                 "Class": "very high",
-                "TP": 492,
+                "TP": 72,
                 "FP": 5,
                 "FN": 8,
-                "TN": 1495
+                "TN": 215
+            }
+        ]
+    },
+    "Decision Tree": {
+        "evaluation_metrics": {
+            "accuracy": 0.8466666666666667,
+            "precision": 0.8481977544418592,
+            "recall": 0.8466666666666667,
+            "f1_score": 0.8462068332349663,
+            "matthews_corrcoef": 0.7960197034970348,
+            "auc": 0.5789331762318211
+        },
+        "confusion_matrix": [
+            [
+                48,
+                0,
+                9,
+                11
+            ],
+            [
+                0,
+                72,
+                8,
+                0
+            ],
+            [
+                4,
+                4,
+                64,
+                0
+            ],
+            [
+                10,
+                0,
+                0,
+                70
+            ]
+        ],
+        "multilabel_confusion_matrix": [
+            {
+                "Class": "low",
+                "TP": 48,
+                "FP": 14,
+                "FN": 20,
+                "TN": 218
+            },
+            {
+                "Class": "medium",
+                "TP": 72,
+                "FP": 4,
+                "FN": 8,
+                "TN": 216
+            },
+            {
+                "Class": "high",
+                "TP": 64,
+                "FP": 17,
+                "FN": 8,
+                "TN": 211
+            },
+            {
+                "Class": "very high",
+                "TP": 70,
+                "FP": 11,
+                "FN": 10,
+                "TN": 209
+            }
+        ]
+    },
+    "kNN": {
+        "evaluation_metrics": {
+            "accuracy": 0.9466666666666667,
+            "precision": 0.946372659979966,
+            "recall": 0.9466666666666667,
+            "f1_score": 0.9463849128067545,
+            "matthews_corrcoef": 0.9288281714167415,
+            "auc": 0.5142415763808685
+        },
+        "confusion_matrix": [
+            [
+                60,
+                0,
+                4,
+                4
+            ],
+            [
+                0,
+                79,
+                1,
+                0
+            ],
+            [
+                2,
+                2,
+                68,
+                0
+            ],
+            [
+                3,
+                0,
+                0,
+                77
+            ]
+        ],
+        "multilabel_confusion_matrix": [
+            {
+                "Class": "low",
+                "TP": 60,
+                "FP": 5,
+                "FN": 8,
+                "TN": 227
+            },
+            {
+                "Class": "medium",
+                "TP": 79,
+                "FP": 2,
+                "FN": 1,
+                "TN": 218
+            },
+            {
+                "Class": "high",
+                "TP": 68,
+                "FP": 5,
+                "FN": 4,
+                "TN": 223
+            },
+            {
+                "Class": "very high",
+                "TP": 77,
+                "FP": 4,
+                "FN": 3,
+                "TN": 216
             }
         ]
     }

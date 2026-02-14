@@ -29,20 +29,15 @@ def plot_confusion_matrix(model_name, cm, title):
     ax.set_title(f"{title}")
     return fig
 
-def evaluation_marix(model_name,y_test, y_pred, title="Evaluation Metrics"):
-    accuracy = accuracy_score(y_test, y_pred)
-    precision = precision_score(y_test, y_pred, average='weighted')
-    recall = recall_score(y_test, y_pred, average='weighted')
-    f1 = f1_score(y_test, y_pred, average='weighted')
-    mcc = matthews_corrcoef(y_test, y_pred)
-    
+def evaluation_marix(model_name,y_test, y_pred,y_prob, title="Evaluation Metrics"):
     metrics = {
-        "accuracy": accuracy,
-        "precision": precision,
-        "recall": recall,
-        "f1_score": f1,
-        "matthews_corrcoef": mcc
-    }
+        "accuracy": accuracy_score(y_test, y_pred),
+        "precision": precision_score(y_test, y_pred, average='weighted'),
+        "recall": recall_score(y_test, y_pred, average='weighted'),
+        "f1_score": f1_score(y_test, y_pred, average='weighted'),
+        "matthews_corrcoef": matthews_corrcoef(y_test, y_pred),
+        "auc": roc_auc_score(y_test, y_prob, multi_class='ovr')
+        }
     save_model_results(model_name, "evaluation_metrics", metrics, file_path="model_results.json")
     return metrics, plot_evaluation_metrics(model_name, metrics, title=title)
 
